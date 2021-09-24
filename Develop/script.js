@@ -5,7 +5,7 @@ var upperC = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 var lowerC = ('abcdefghijklmnopqrstuvwxyz')
 var digits = ('0123456789')
 var special = ('!@#$%^&*?><:')
-var inclcases = ();
+var inclcases;
 
 
 
