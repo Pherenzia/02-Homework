@@ -7,32 +7,64 @@ var lowerC = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q
 var digits = ['0','1','2','3','4','5','6','7','8','9'];
 var special = ['!','@','#','$','%','^','&','*','?','>','<',':'];
 var inclcases = [];
-
-if(confirm('Include Uppercase Letters?')) {
-  inclcases = inclcases.concat(upperC)
-}
+var passlength = [];
+var parsedlength = [];
 
 
-if(confirm('Include Lowercase Letters?')) {
-  inclcases = inclcases.concat(lowerC)
-}
+passlength = prompt('Please enter desired password length (8-128');
 
-if(confirm('Include Digits?')) {
-  inclcases = inclcases.concat(digits)
-}
+parsedlength = parseInt(passlength);
+console.log(parsedlength)
 
-if(confirm('Include Special Characters?')) {
-  inclcases = inclcases.concat(special)
-  console.log(inclcases)
-}
 
-if (inclcases === 0) {
-  alert('You must select at least one parameter!')
+
+if (parsedlength < 8) {
+  alert('Enter a valid entry')
   return generatePassword();
 }
 
-var password = inclcases[Math.floor(Math.random() * inclcases.length)]
-console.log(password)
+if (parsedlength > 128) {
+  alert('Enter a valid entry')
+  return generatePassword();
+}
+
+
+if (confirm('Include Uppercase Letters?')) {
+  inclcases = inclcases.concat(upperC)
+};
+
+
+if (confirm('Include Lowercase Letters?')) {
+  inclcases = inclcases.concat(lowerC)
+};
+
+if (confirm('Include Digits?')) {
+  inclcases = inclcases.concat(digits)
+};
+
+if (confirm('Include Special Characters?')) {
+  inclcases = inclcases.concat(special)
+  console.log(inclcases)
+};
+
+if (inclcases.length === 0) {
+  alert('You must select at least one parameter!')
+  return generatePassword();
+};
+
+var passwordpiece = inclcases[Math.floor(Math.random() * inclcases.length)]
+//console.log(passwordpiece)
+
+let password = '';
+
+for (var i = 0; i < parsedlength; i++) {
+  password = password + passwordpiece
+  console.log(password)
+}
+return password;
+
+
+ 
 };
 
 
