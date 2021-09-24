@@ -1,12 +1,24 @@
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
 
-var upperC = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-var lowerC = ('abcdefghijklmnopqrstuvwxyz')
-var digits = ('0123456789')
-var special = ('!@#$%^&*?><:')
-var inclcases;
+function generatePassword() {
+var upperC = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+var lowerC = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+var digits = ['0','1','2','3','4','5','6','7','8','9']
+var special = ['!','@','#','$','%','^','&','*','?','>','<',':']
+var inclcases = [];
 
+if(confirm('Include Uppercase Letters?')) {
+  inclcases = inclcases.concat(upperC)
+  console.log(inclcases)
+}
+
+
+if(confirm('Include Lowercase Letters?')) {
+  inclcases = inclcases.concat(lowerC)
+}
+
+};
 
 
 // Write password to the #password input
